@@ -15,9 +15,7 @@ const loginRules = {
     .required(),
 };
 
-const loginSchema = Joi.object(loginRules);
-
-const registerSchema = Joi.object({
+const registerRules = {
   ...loginRules,
 
   name: Joi
@@ -42,12 +40,16 @@ const registerSchema = Joi.object({
   passwordRepeat: Joi
     .valid(Joi.ref('password'))
     .required(),
-});
-
-const registerSchemaCsrf = {
-  ...registerSchema,
-  _csrf: Joi.string(),
 };
+
+const loginSchema = Joi.object(loginRules);
+
+const registerSchema = Joi.object(registerRules);
+
+const registerSchemaCsrf = Joi.object({
+  ...registerRules,
+  _csrf: Joi.string(),
+});
 
 module.exports = {
   loginSchema,

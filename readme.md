@@ -16,14 +16,12 @@
 
 0. Запустить сервер mongodb
 
-1. cd api
-   npm i
+1. cd api && npm i
 
 2. cp .env.example .env
 
 3. npm run start
 
-4. cd ../ui
-   npm i
+4. cd ui && npm i
 
-5. npm run start:dev
+5. npm run start

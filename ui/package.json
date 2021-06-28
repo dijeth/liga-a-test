@@ -1,0 +1,40 @@
+{
+  "name": "liga-a-test-front",
+  "version": "1.0.0",
+  "description": "Liga A | Test Front",
+  "private": false,
+  "scripts": {
+    "build:dev": "cross-env ROOT_ROUTE=/ webpack --mode development",
+    "build:testing": "cross-env ROOT_ROUTE=/test/spa/ webpack --mode production",
+    "build:prod": "cross-env ROOT_ROUTE=/spa/ webpack --mode production",
+    "start": "cross-env ROOT_ROUTE=/ webpack-dev-server"
+  },
+  "author": "Dmitriy Orlov",
+  "license": "ISC",
+  "dependencies": {
+    "js-cookie": "^2.2.1",
+    "prop-types": "15.7.2",
+    "react": "17.0.1",
+    "react-dom": "17.0.1",
+    "react-router-dom": "5.2.0"
+  },
+  "devDependencies": {
+    "@babel/core": "7.12.8",
+    "@babel/preset-env": "7.12.7",
+    "@babel/preset-react": "7.12.7",
+    "@types/react": "17.0.0",
+    "babel-loader": "8.2.1",
+    "browser-sync": "2.26.13",
+    "cross-env": "7.0.3",
+    "eslint": "7.2.0",
+    "eslint-config-airbnb": "18.2.1",
+    "eslint-plugin-import": "2.22.1",
+    "eslint-plugin-jsx-a11y": "6.4.1",
+    "eslint-plugin-react": "7.21.5",
+    "eslint-plugin-react-hooks": "4.0.0",
+    "html-webpack-plugin": "4.5.0",
+    "webpack": "4.41.5",
+    "webpack-cli": "3.3.10",
+    "webpack-dev-server": "3.10.2"
+  }
+}

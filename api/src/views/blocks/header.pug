@@ -1,0 +1,15 @@
+nav.navbar.navbar-expand-md.navbar-dark.fixed-top.bg-dark
+  a.navbar-brand(href=`${path === '/' ? '' : '/'}`) Users
+  button.navbar-toggler(type='button' data-toggle='collapse' data-target='#navbarCollapse' aria-controls='navbarCollapse' aria-expanded='false' aria-label='Toggle navigation')
+    span.navbar-toggler-icon
+  #navbarCollapse.collapse.navbar-collapse
+    if user.role === 'guest'
+      ul.navbar-nav.ml-auto
+        li.nav-item
+          a(href='/login', class=`nav-link ${path === '/login' ? 'disabled' : ''}`) Login
+        li.nav-item
+          a(href='/register', class=`nav-link ${path === '/register' ? 'disabled' : ''}`) Register
+    else
+      ul.navbar-nav.ml-auto
+        li.nav-item
+          a.nav-link(href='/logout') Logout

@@ -1,0 +1,17 @@
+extends layout
+
+block main
+  .row
+    .col
+      if user.role !== 'guest'
+        p.lead Name: #{user.name}
+        p.lead Last name: #{user.lastname}
+        p.lead Email: #{user.email}
+      else
+        p.lead Please
+          | #{' '}
+          a(href='/login') login
+          | #{' or '}
+          a(href='/register') register.
+    .col
+      img(src=`img/${user.role}.png`)

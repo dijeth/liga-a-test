@@ -1,0 +1,43 @@
+extends layout
+
+block main
+  .row
+    .col
+      form(method="post", action="/register")
+        .mb-3
+          label(for="name") Name
+          input.form-control(type="text", id="name", name="name", value=oldData.name, required)
+          p.text-danger.text-sm #{errors.name}
+
+        .mb-3
+          label(for="lastname") Last name
+          input.form-control(type="text", id="lastname", name="lastname", value=oldData.lastname, required)
+          p.text-danger.text-sm #{errors.lastname}
+
+        .mb-3
+          label(for="email") Email
+          input.form-control(type="text", id="email", name="email", value=oldData.email, required)
+          p.text-danger.text-sm #{errors.email}
+
+        .mb-3
+          label(for="role") Role
+          select.custom-select.d-block(id="role", name="role", required)
+            each role in roles
+              option(value=role) #{role}
+          p.text-danger.text-sm #{errors.role}
+
+        .mb-3
+          label(for="password") Password
+          input.form-control(type="password", id="password", name="password", required)
+          p.text-danger.text-sm #{errors.password}
+
+        .mb-3
+          label(for="passwordRepeat") Repeat password
+          input.form-control(type="password", id="passwordRepeat", name="passwordRepeat", required)
+          p.text-danger.text-sm #{errors.passwordRepeat}
+
+        .mt-6
+          button.btn.btn-primary.btn-md(type="submit") Register
+
+        input(type="hidden" name="_csrf" value=csrf)
+    .col
